@@ -1,2 +1,2 @@
 # dotfiles
-all of my dotfiles to make setting up a new computer easier
+all of my dotfiles to make setting up a new computer more easier
