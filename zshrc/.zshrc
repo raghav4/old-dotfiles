@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +15,9 @@ export ZSH="/Users/raghavsharma/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="funky"
+ZSH_THEME=powerlevel10k/powerlevel10k
+# ZSH_THEME="jovial"
+SOBOLE_THEME_MODE=dark
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,9 +77,20 @@ ZSH_THEME="funky"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colorize pip python brew osx)
+plugins=(
+  git
+  autojump
+  urltools
+  bgnotify
+  zsh-autosuggestions
+  # zsh-history-enquirer
+  jovial
+  osx
+)
 
 # POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time os_icon)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -104,3 +124,20 @@ source ~/.iterm2_shell_integration.zsh
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export LC_ALL=en_US.UTF-8
+export HOMEBREW_NO_AUTO_UPDATE=true
+
+# for nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/raghavsharma/Desktop/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/raghavsharma/Desktop/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/raghavsharma/Desktop/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/raghavsharma/Desktop/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Python 
+export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
