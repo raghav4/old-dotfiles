@@ -1,10 +1,10 @@
 {
-	"color_scheme": "Packages/Theme - Cyanide/Cyanide - Black.tmTheme",
-	"font_size": 16,
-	"font_face": "Monaco",
+	"color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
+	"font_face": "Jetbrains Mono",
+	"font_size": 15,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-	"theme": "Cyanide - Golden.sublime-theme"
+	"theme": "Spacegray Oceanic.sublime-theme"
 }
