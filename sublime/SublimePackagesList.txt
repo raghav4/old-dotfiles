@@ -1,0 +1,29 @@
+{
+    "installed_packages": [
+        "10% Too Dull for My Tastes Color Scheme", 
+        "3024 Color Scheme", 
+        "A File Icon", 
+        "Acme Color Scheme", 
+        "auto-save", 
+        "ayu", 
+        "C++ & C Single File Builder - Minghang Yang", 
+        "C++ Completions", 
+        "C++11", 
+        "ColorSchemeEditor", 
+        "DocBlockr", 
+        "DoxyDoc", 
+        "FileIcons", 
+        "FileIcons Mono", 
+        "Local History", 
+        "Package Control", 
+        "PackageSync", 
+        "Terminal", 
+        "TerminalView", 
+        "Theme - Alpenglow", 
+        "Theme - Cyanide", 
+        "Theme - Spacegray", 
+        "Todo", 
+        "ToDone", 
+        "WakaTime"
+    ]
+}
