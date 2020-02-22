@@ -44,6 +44,9 @@ SOBOLE_THEME_MODE=dark
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
 
+# Vidly private key
+# export jwtPrivateKey="mySecretKey"
+
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
@@ -82,6 +85,7 @@ plugins=(
   autojump
   urltools
   bgnotify
+  wakatime
   zsh-autosuggestions
   # zsh-history-enquirer
   jovial
@@ -141,3 +145,19 @@ export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"
+
+# POSTGRES SQL
+# start postgres
+alias pg_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+# stop postgres
+alias pg_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+
+# MONGO DB
+# start mongodb
+alias mongo_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb-community.plist'
+# stop mongodb
+alias mongo_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb-community.plist'
