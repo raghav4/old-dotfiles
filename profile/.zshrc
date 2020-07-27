@@ -87,6 +87,7 @@ plugins=(
   bgnotify
   wakatime
   zsh-autosuggestions
+  zsh-syntax-highlighting
   # zsh-history-enquirer
   jovial
   osx
@@ -95,6 +96,9 @@ plugins=(
 # POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time os_icon)
+
+# If the above didn't help or you want to skip the verification of insecure directories
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -156,8 +160,27 @@ alias pg_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.p
 # stop postgres
 alias pg_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 
+# MYSQL
+export PATH=${PATH}:/usr/local/mysql/bin/
+
 # MONGO DB
 # start mongodb
 alias mongo_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb-community.plist'
 # stop mongodb
 alias mongo_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb-community.plist'
+
+
+# ZSH-COMPLETIONS
+# fpath=(/usr/local/share/zsh-completions $fpath)
+
+# ZSH-SYNTAX-HIGHLIGHT
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+# source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zshghlighting.zsh
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
